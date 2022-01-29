@@ -4,7 +4,7 @@
     "slug": "BuissnessNote",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./img/copy-writing.png",
+    "icon": "./img/Picsart_22-01-29_18-18-42-074.jpg",
     "splash": {
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./img/copy-writing.png",
+        "foregroundImage": "./img/Picsart_22-01-29_18-18-42-074.jpg",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.mbittu00.BuissnessNote"

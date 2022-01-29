@@ -66,12 +66,12 @@ history('/view')
         onChangeText={setNote}
         value={note}
         multiline={true}
-        placeholder='ote....'
+        placeholder='note....'
       />
   <View style={{alignItems:'center'}}>
 <TouchableOpacity style={styles.btn}
 onPress={sendData}>
-<Text>Submit{data._id}</Text>
+<Text>Submit</Text>
 </TouchableOpacity>
 </View>
 <View style={{

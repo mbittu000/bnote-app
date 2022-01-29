@@ -29,9 +29,7 @@ export default function App() {
   
   
   let uri=`https://business-note.herokuapp.com/set/note`
- //let history = useNavigate(); 
   let sendData=async()=>{
- //alert('working')
 fetch(uri,{
     method: "POST",
   headers: {'Content-Type':'application/json'},
@@ -42,13 +40,12 @@ fetch(uri,{
 .then(function(res){ return res.json(); })
 .then(async function(data){
   let setDot=await AsyncStorage.setItem('id',data._id)
-  //console.error(setDot)
 })
 
 
 history('/view')
 
-  }
+  } 
   
   return (
 <View style={styles.main}>
@@ -64,12 +61,12 @@ history('/view')
         onChangeText={setNote}
         value={note}
         multiline={true}
-        placeholder='ote....'
+        placeholder='note....'
       />
   <View style={{alignItems:'center'}}>
 <TouchableOpacity style={styles.btn}
 onPress={sendData}>
-<Text>Submit{data._id}</Text>
+<Text>Submit</Text>
 </TouchableOpacity>
 </View>
 <View style={{

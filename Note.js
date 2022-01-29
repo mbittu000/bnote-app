@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View , ScrollView,TouchableOpacity,Image} from 'react-native';
+import { StyleSheet, Text, View , ScrollView,TouchableOpacity,Image,ActivityIndicator} from 'react-native';
 import {useState,useEffect} from'react'
 import Item from'./Item'
 
 let NoteBody=()=>{
   let [data,setData]=useState([])
+  let [dataChake,setDataChake]=useState(true)
 
 let uri=`https://business-note.herokuapp.com/get/note`
 useEffect(()=>{
@@ -13,6 +14,7 @@ useEffect(()=>{
     let fet=await fc.json()
     if (work) {
    setData(fet)
+   setDataChake(false)
     }
    let re=()=>{ work=false}
    re()
@@ -20,7 +22,7 @@ useEffect(()=>{
   call()
 },[])
 
-
+//<ActivityIndicator size="large" color="#00ff00" />
 //console.log(data)
   return(
     
@@ -28,8 +30,9 @@ useEffect(()=>{
        <ScrollView>
     <View style={styles.singel}>
     <View style={styles.flot}>
-{
-  data.map((e,i)=>{
+{dataChake?
+<ActivityIndicator size={50} color="#ff47d9" style={styles.lod}/>:
+          data.map((e,i)=>{
     return(<Item key={e._id} id={e._id} title={e.title} note={e.note}/>)
   })
 }
@@ -61,6 +64,14 @@ const styles = StyleSheet.create({
   },flot:{
     textAlign: 'right'
   },futter:{
-    height:300
+    height:500
+  },lod:{
+    marginTop:200
   }
 });
+/*
+{
+  data.map((e,i)=>{
+    return(<Item key={e._id} id={e._id} title={e.title} note={e.note}/>)
+  })
+}*/
